@@ -7,17 +7,21 @@ import { useEffect, useState } from 'react';
 function App() {
     const [imageData, setImageData] = useState(images);
     const [deletedItems, setDeletedItems] = useState([]);
+    const [visibleItemCount, setVisibleItemCount] = useState(images.length);
 
     useEffect(() => {
         const storedData = localStorage.getItem('imageData');
         const storedDeletedItems = localStorage.getItem('deletedItems');
+        const storedVisibleItemCount = localStorage.getItem('visibleItemCount');
 
         if (storedData) {
             setImageData(JSON.parse(storedData));
         }
-
         if (storedDeletedItems) {
             setDeletedItems(JSON.parse(storedDeletedItems));
+        }
+        if (storedVisibleItemCount) {
+            setVisibleItemCount(Number(storedVisibleItemCount));
         }
     }, []);
 
@@ -30,7 +34,9 @@ function App() {
 
         localStorage.setItem('imageData', JSON.stringify(updatedData));
         localStorage.setItem('deletedItems', JSON.stringify([...deletedItems, deletedItem]));
-        console.log(deletedItem);
+
+        setVisibleItemCount(prevCount => prevCount - 1);
+        localStorage.setItem('visibleItemCount', visibleItemCount - 1);
     };
 
     const handleRestoreItems = () => {
@@ -39,8 +45,9 @@ function App() {
         setDeletedItems([]);
 
         localStorage.setItem('imageData', JSON.stringify([...imageData, ...restoredData]));
-        localStorage.removeItem('deletedItems');
-        console.log(restoredData);
+
+        setVisibleItemCount(prevCount => prevCount + restoredData.length);
+        localStorage.setItem('visibleItemCount', visibleItemCount + restoredData.length);
     };
 
     var date = moment().format('L, h:mm a');
@@ -49,7 +56,9 @@ function App() {
         <div className='container'>
             <div className='d-flex jcc aic flex-col mb-50'>
                 <div className='d-flex jcc aic flex-col'>
-                    <h1 className='title'>Total images: {images.length}</h1>
+                    <h1 className='title'>
+                        Visible images: {visibleItemCount}/{images.length}
+                    </h1>
                     <div>{date}</div>
                 </div>
                 <div className='wrapper'>
