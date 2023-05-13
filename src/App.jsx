@@ -1,7 +1,9 @@
+import Card from './components/card/Card';
+
 function App() {
     return (
         <div className='container'>
-            <h1>React App</h1>
+            <Card />
         </div>
     );
 }
