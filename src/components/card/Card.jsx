@@ -36,7 +36,9 @@ const Card = ({ image }) => {
                         />
                     </div>
                 </div>
-                <button className={styles.remove}>Remove</button>
+                <button className={styles.remove}>
+                    <img width={24} height={24} src='/close.svg' alt='' />
+                </button>
             </div>
         </>
     );

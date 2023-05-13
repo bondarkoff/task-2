@@ -4,11 +4,6 @@
     overflow: hidden;
     border-radius: 100%;
     transition: transform 0.15s ease-in-out;
-    &:hover {
-        img {
-            transform: rotate(45deg);
-        }
-    }
 }
 
 .item {
@@ -46,6 +41,11 @@
     }
     &:active {
         border: 5px solid rgb(196, 26, 26);
+    }
+    &:hover {
+        img {
+            transform: rotate(45deg);
+        }
     }
 }
 
@@ -93,5 +93,9 @@
     outline: none;
     cursor: pointer;
     width: 100%;
+    height: 25px;
     transition: all 0.15s ease-in-out;
+    &:hover {
+        background: #d1d1d1;
+    }
 }
