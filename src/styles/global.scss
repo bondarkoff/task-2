@@ -47,3 +47,26 @@ html {
         cursor: not-allowed;
     }
 }
+
+// Media
+
+@media (max-width: 1270px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 260px);
+        grid-template-rows: repeat(4, 260px);
+    }
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 225px);
+        grid-template-rows: repeat(6, 225px);
+    }
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 225px);
+        grid-template-rows: repeat(12, 225px);
+    }
+}
