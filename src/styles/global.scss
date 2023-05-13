@@ -13,11 +13,17 @@ html {
 }
 
 .wrapper {
-    margin-top: 25px;
+    margin-top: 20px;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(4, 280px);
     grid-template-rows: repeat(3, 280px);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+}
+
+.title {
+    margin-top: 15px;
+    font-size: 24px;
+    text-align: center;
 }
