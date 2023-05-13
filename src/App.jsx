@@ -1,37 +1,16 @@
 import Card from './components/card/Card';
 
-import {
-    first,
-    second,
-    third,
-    fourth,
-    fifth,
-    sixth,
-    seventh,
-    eighth,
-    ninth,
-    tenth,
-    eleventh,
-    twelfth,
-} from './assets/images';
+import { images } from './components/card/images.data';
 
 function App() {
     return (
         <div className='container'>
             <div className='wrapper'>
-                <Card image={first} />
-                <Card image={second} />
-                <Card image={third} />
-                <Card image={fourth} />
-                <Card image={fifth} />
-                <Card image={sixth} />
-                <Card image={seventh} />
-                <Card image={eighth} />
-                <Card image={ninth} />
-                <Card image={tenth} />
-                <Card image={eleventh} />
-                <Card image={twelfth} />
+                {images.map(image => (
+                    <Card key={image.id} image={image} />
+                ))}
             </div>
+            <p>{images.length}</p>
         </div>
     );
 }
