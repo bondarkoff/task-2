@@ -26,12 +26,17 @@ const Card = ({ image }) => {
                 </div>
             )}
             <div className={styles.item}>
-                <img
-                    className={styles.image}
-                    src={image.image}
-                    alt={image.id}
-                    onClick={handleClick}
-                />
+                <div className={styles.content}>
+                    <div className={styles.image}>
+                        <img
+                            className={styles.image}
+                            src={image.image}
+                            alt={image.id}
+                            onClick={handleClick}
+                        />
+                    </div>
+                </div>
+                <button className={styles.remove}>Remove</button>
             </div>
         </>
     );

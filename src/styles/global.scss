@@ -13,13 +13,13 @@ html {
 }
 
 .wrapper {
-    margin-top: 20px;
+    padding: 20px 0px 50px 0px;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(4, 280px);
     grid-template-rows: repeat(3, 280px);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
 }
 
 .title {

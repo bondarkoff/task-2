@@ -4,31 +4,47 @@
     overflow: hidden;
     border-radius: 100%;
     transition: transform 0.15s ease-in-out;
-}
-
-.item {
-    border: 5px solid rgb(100, 98, 98);
-    background-color: rgb(100, 98, 98, 0.5);
-    transition: border 0.15s ease-in-out;
-    overflow: hidden;
-    cursor: pointer;
     &:hover {
-        border: 5px solid rgb(202, 200, 35);
-
         img {
             transform: rotate(45deg);
         }
     }
-    &:active {
-        border: 5px solid rgb(196, 26, 26);
-    }
+}
+
+.item {
+    transition: border 0.15s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &:nth-child(5) {
-        border: 5px solid rgb(196, 26, 26);
+        .content {
+            border: 5px solid rgb(196, 26, 26) !important;
+        }
     }
     &:nth-child(1) {
-        border: 5px solid rgb(196, 26, 26);
+        .content {
+            border: 5px solid rgb(196, 26, 26) !important;
+        }
     }
     &:nth-child(9) {
+        .content {
+            border: 5px solid rgb(196, 26, 26) !important;
+        }
+    }
+}
+
+.content {
+    border: 5px solid rgb(100, 98, 98);
+    background-color: rgba(100, 98, 98, 0.5);
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: border 0.15s ease-in-out;
+    &:hover {
+        border: 5px solid rgb(202, 200, 35);
+    }
+    &:active {
         border: 5px solid rgb(196, 26, 26);
     }
 }
@@ -55,6 +71,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
     &:hover {
         background-color: rgb(196, 26, 26);
     }
@@ -68,4 +85,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.remove {
+    border: 1px solid #000;
+    background: #e5e5e5;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.15s ease-in-out;
 }
