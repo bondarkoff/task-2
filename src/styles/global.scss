@@ -11,3 +11,12 @@ html {
     margin: 0 auto;
     width: 80%;
 }
+
+.wrapper {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
