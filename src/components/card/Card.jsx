@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import styles from './Card.module.scss';
 
-const Card = ({ image }) => {
+const Card = ({ image, onRemoveItem }) => {
     const [show, setShow] = useState(false);
 
     const handleClick = () => {
         setShow(!show);
+    };
+
+    const handleDelete = () => {
+        onRemoveItem(image.id);
     };
 
     return (
@@ -36,7 +40,7 @@ const Card = ({ image }) => {
                         />
                     </div>
                 </div>
-                <button className={styles.remove}>
+                <button onClick={() => handleDelete(image.id)} className={styles.remove}>
                     <img width={24} height={24} src='/close.svg' alt='' />
                 </button>
             </div>
